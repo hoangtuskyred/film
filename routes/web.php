@@ -17,3 +17,4 @@
 
 Route::get('/', 'FilmController@index');
 Route::get('/detail/{id}', 'FilmController@detail');
+Route::get('/watch/{id}', 'FilmController@watch');

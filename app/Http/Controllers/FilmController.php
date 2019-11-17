@@ -11,8 +11,13 @@ class FilmController extends Controller
         return view('film.index');
     }
 
-    public function detail()
+    public function detail($id)
     {
         return view('film.detail');
+    }
+
+    public function watch($id)
+    {
+        return view('film.watch');
     }
 }
