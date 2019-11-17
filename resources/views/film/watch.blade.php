@@ -35,4 +35,14 @@
     </div>
 </div>
 
+<script src="https://cdn.jwplayer.com/libraries/9elsu1mc.js"></script>
+<script>
+$(document).ready(function () {
+    jwplayer('video').setup({
+        //Placeholder Image
+        image: "https://imag.malavida.com/mvimgbig/download-fs/avengers-alliance-13414-1.jpg",
+        file: "https://www.w3schools.com/html/mov_bbb.mp4"
+    });
+});
+</script>
 @endsection

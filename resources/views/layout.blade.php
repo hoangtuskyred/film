@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pridi|Roboto" rel="stylesheet">
     <link href={{ asset('css/styleweb.css') }} rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://s.clhcdn.net/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
 </head>
 <body>
 <div id="ah-wrapper">
