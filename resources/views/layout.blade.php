@@ -1,9 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <meta name="description" content="Xem phim anime online miễn phí chất lượng cao, anime vietsub tổng hợp, xem anime hay nhất, vietsub anime mới nhất, hãy cùng khám phá kho tàng về hoạt hình nhật bản nhé." />
     <link href="https://fonts.googleapis.com/css?family=Pridi|Roboto" rel="stylesheet">
     <link href={{ asset('css/styleweb.css') }} rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@
                             <li class="ah-text-logo ah-float-left"><a href="/">ANIME<span class="ah-tls">HAY</span></a>
                             </li>
                             <li class="ah-lsm ah-float-right" onClick="menuDropdown(this)">
-                                <a class="non-routed" href="#">Danh mục</a>
+                                <a class="non-routed" href="javascript:void(0);">Danh mục</a>
                                 <i class="non-routed fa fa-align-justify"></i>
                             </li>
                             <ul class="ah-ulsm">
@@ -105,7 +106,9 @@
                                     <li><a href="http://animehay.tv/the-loai/phim-hoat-hinh/dai-loan" title="Đài loan">Đài loan</a></li>
                                     <li><a href="http://animehay.tv/the-loai/phim-hoat-hinh/khac" title="Khác">Khác</a></li>
                                 </ul>
-                                <li class="ah-lsm ah-drop-ft" onClick="menuDropdown(this)"><a class="non-routed" href="#">Năm Phát Hành <i class="fa fa-chevron-down ah-rtnav" aria-hidden="true"></i></a>
+                                <li class="ah-lsm ah-drop-ft" onClick="menuDropdown(this)">
+                                    <a class="non-routed" href="#">Năm Phát Hành</a>
+                                    <i class="fa fa-chevron-down ah-rtnav" aria-hidden="true"></i>
                                 </li>
                                 <ul class="ah-ulsm">
                                     <li><a href="/phim-phat-hanh/2019" title="Phim phát hành năm 2019">2019</a>
@@ -127,9 +130,11 @@
                                     <li><a href="/phim-phat-hanh/-2012" title="Phim phát hành trước năm 2012">Trước 2012</a>
                                     </li>
                                 </ul>
-                                <li><a class="non-routed" href="/phim-bo">Phim Bộ</a>
+                                <li>
+                                    <a class="non-routed" href="/phim-bo">Phim Bộ</a>
                                 </li>
-                                <li><a class="non-routed" href="/phim-le">Phim Lẻ</a>
+                                <li>
+                                    <a class="non-routed" href="/phim-le">Phim Lẻ</a>
                                 </li>
                             </ul>
                         </ul>

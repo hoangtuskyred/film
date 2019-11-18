@@ -10,12 +10,12 @@
     @foreach($films as $film)
         <div class="ah-col-film">
             <div class="ah-pad-film">
-                <div class="ah-effect-film"><a href="/detail/{{ $film->id }}"></a>
+                <div class="ah-effect-film">
+                    <a href="/chi-tiet/{{ $film->id }}"></a>
                 </div>
-                <a href="/detail/{{ $film->id }}">
+                <a href="/chi-tiet/{{ $film->id }}">
                     <img src="{{ $film->poster }}"/>
-                    <span class="number-ep-film">6/??</span>
-                    <span class="rate-point">9.2</span>
+                    <span class="number-ep-film">{{ $film->duration }}</span>
                     <span class="name-film">{{ $film->name }}</span>
                 </a>
             </div>

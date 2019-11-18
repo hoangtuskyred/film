@@ -12,9 +12,6 @@ class FilmController extends Controller
     {
         $films = Film::paginate(20);
         return view('film.index', compact('films'));
-        echo '<pre>';
-        print_r($films);
-        echo '</pre>';
     }
 
     public function detail($id)
@@ -25,7 +22,15 @@ class FilmController extends Controller
 
     public function watch($id)
     {
-        return view('film.watch');
+        $film = Film::find($id);
+        return view('film.watch', compact('film'));
+    }
+
+    public function getUrlFilm(Request $request)
+    {
+        $filmId = $request->get('filmId');
+        $episode = $request->has('episode') ? $request->get('episode') : 1;
+        return Episode::where('film_id', $filmId)->where('name', $episode)->first()->url;
     }
 
     public function data()

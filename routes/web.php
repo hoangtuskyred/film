@@ -16,6 +16,7 @@
 //});
 
 Route::get('/', 'FilmController@index');
-Route::get('/detail/{id}', 'FilmController@detail');
-Route::get('/watch/{id}', 'FilmController@watch');
+Route::get('/chi-tiet/{id}', 'FilmController@detail');
+Route::get('/xem-phim/{id}', 'FilmController@watch');
+Route::post('/api/urlFilm', 'FilmController@getUrlFilm');
 Route::get('/data', 'FilmController@data');
