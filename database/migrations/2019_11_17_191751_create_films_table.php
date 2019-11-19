@@ -21,6 +21,7 @@ class CreateFilmsTable extends Migration
             $table->year('year');
             $table->string('duration');
             $table->string('description', 1000);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

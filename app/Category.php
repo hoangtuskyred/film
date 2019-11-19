@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
@@ -10,4 +11,6 @@ class Category extends Model
     {
         return $this->belongsToMany('App\Film', 'film_category');
     }
+
+    use SoftDeletes;
 }
