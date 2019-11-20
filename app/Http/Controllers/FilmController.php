@@ -21,6 +21,14 @@ class FilmController extends Controller
         return response()->json($film, 200);
     }
 
+    public function getFilmById($id)
+    {
+        $film = Film::find($id);
+        $film['categories'] = $film->categories;
+        return response()->json($film, 200,
+            ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'], JSON_UNESCAPED_UNICODE);
+    }
+
     public function edit(Request $request, $id)
     {
         $film = Film::find($id);

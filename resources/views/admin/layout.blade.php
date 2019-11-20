@@ -95,7 +95,6 @@
 <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
 {{--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>--}}
 <script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 <script>

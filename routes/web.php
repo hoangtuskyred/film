@@ -25,5 +25,6 @@ Route::get('/admin/categories', 'AdminController@categories');
 Route::get('/admin/episodes', 'AdminController@episodes');
 
 Route::post('/films', 'FilmController@create');
+Route::get('/films/{id}', 'FilmController@getFilmById');
 Route::put('/films/{id}/edit', 'FilmController@edit');
 Route::delete('/films/{id}', 'FilmController@delete');
