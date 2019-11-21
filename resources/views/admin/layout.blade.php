@@ -6,9 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('css/libs/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/libs/bootstrap-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/libs/toastr.min.css') }}">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -26,7 +26,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.3/examples/dashboard/dashboard.css">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -92,11 +92,10 @@
         </main>
     </div>
 </div>
-<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
-{{--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>--}}
-<script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script src="{{ asset('js/libs/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ asset('js/libs/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/libs/feather.min.js') }}"></script>
+<script src="{{ asset('js/libs/toastr.min.js') }}"></script>
 <script>
     feather.replace();
 

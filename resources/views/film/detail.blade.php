@@ -23,7 +23,9 @@
         <div class="ah-pif-ftool ah-bg-bd ah-clear-both">
             <div class="ah-float-left" style="float: none!important; text-align: center">
                 <span>
-                    <a href="/xem-phim/{{ $film->id }}" class="button-one"><i class="fa fa-play-circle"></i> Xem Phim</a>
+                    <a href="/xem-phim/{{ convertNameToLink($film->name) }}-{{ $film->id }}.html" class="button-one">
+                        <i class="fa fa-play-circle"></i> Xem Phim
+                    </a>
                 </span>
             </div>
         </div>
@@ -55,3 +57,18 @@
 </div>
 
 @endsection
+<?php
+function convertNameToLink(string $str)
+{
+    $str = mb_strtolower($str);
+    $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", "a", $str);
+    $str = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", "e", $str);
+    $str = preg_replace("/(ì|í|ị|ỉ|ĩ)/", "i", $str);
+    $str = preg_replace("/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/", "o", $str);
+    $str = preg_replace("/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/", "u", $str);
+    $str = preg_replace("/(ỳ|ý|ỵ|ỷ|ỹ)/", "y", $str);
+    $str = preg_replace("/(đ)/", "d", $str);
+    $str = trim(preg_replace('/\s+/','-', $str));
+    return $str;
+}
+?>

@@ -1,9 +1,8 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
-
+use App\Category;
 use App\Episode;
 use App\Film;
 use Illuminate\Http\Request;
@@ -12,18 +11,29 @@ class AppController extends Controller
 {
     public function index()
     {
-        $films = Film::paginate(20);
+        $films = Film::orderBy('id', 'desc')->paginate(20);
         return view('film.index', compact('films'));
     }
 
-    public function detail($id)
+    public function category($link)
     {
+        $category = Category::where('link', $link)->first();
+        $films = $category->films()->orderBy('id', 'desc')->paginate(20);
+        return view('film.index', compact('films'));
+    }
+
+    public function detail($link)
+    {
+        preg_match_all('/\d+/', $link, $matches);
+        $id = end($matches[0]);
         $film = Film::find($id);
         return view('film.detail', compact('film'));
     }
 
-    public function watch($id)
+    public function watch($link)
     {
+        preg_match_all('/\d+/', $link, $matches);
+        $id = end($matches[0]);
         $film = Film::find($id);
         return view('film.watch', compact('film'));
     }
@@ -43,7 +53,7 @@ class AppController extends Controller
 
         $episode1 = new Episode();
         $episode1->name = 2;
-        $episode1->url = 'https://www.w3schools.com/html/mov_bbb.mp4';
+        $episode1->url = 'https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4';
 
         $film = new Film();
         $film->name = 'Thư Linh Ký';
