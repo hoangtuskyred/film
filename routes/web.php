@@ -11,12 +11,20 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+// Frontend
+Route::get('/', 'AppController@index');
+Route::get('/chi-tiet/{id}', 'AppController@detail');
+Route::get('/xem-phim/{id}', 'AppController@watch');
+Route::post('/api/urlFilm', 'AppController@getUrlFilm');
+Route::get('/data', 'AppController@data');
 
-Route::get('/', 'FilmController@index');
-Route::get('/chi-tiet/{id}', 'FilmController@detail');
-Route::get('/xem-phim/{id}', 'FilmController@watch');
-Route::post('/api/urlFilm', 'FilmController@getUrlFilm');
-Route::get('/data', 'FilmController@data');
+// Backend
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/films', 'AdminController@films');
+Route::get('/admin/categories', 'AdminController@categories');
+Route::get('/admin/episodes', 'AdminController@episodes');
+
+Route::post('/films', 'FilmController@create');
+Route::get('/films/{id}', 'FilmController@getFilmById');
+Route::put('/films/{id}/edit', 'FilmController@edit');
+Route::delete('/films/{id}', 'FilmController@delete');
